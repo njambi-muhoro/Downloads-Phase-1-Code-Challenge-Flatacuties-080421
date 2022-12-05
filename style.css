@@ -1,13 +1,14 @@
 html {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-.logo{
+.logo {
   text-align: center;
   background-color: rgb(49, 109, 179);
   color: white;
@@ -22,6 +23,24 @@ html, body {
   align-items: center;
   padding-bottom: 3vh;
 }
+.characterBar {
+  height: 15vh;
+  background: rgb(49, 109, 179);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 3vh;
+  border: 2px solid rgb(0, 255, 128);
+}
+.imgs {
+  display: none;
+  border: 2px solid black;
+}
+#hidden {
+  border: 2px solid rgb(128, 122, 0);
+  color: red;
+  display: none;
+}
 
 #character-bar span {
   padding: 1%;
@@ -35,7 +54,7 @@ html, body {
   border: 1px solid white;
 }
 
-.characterInfo{
+.characterInfo {
   height: 550px;
   padding: 30px;
   font-size: 24px;
@@ -43,19 +62,42 @@ html, body {
   text-align: center;
 }
 
-input[type="submit"], button {
+input[type="submit"],
+button {
   background-color: rgb(49, 109, 179);
   color: white;
   font-size: 18px;
   border-radius: 6px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input[type="text"] {
   font-size: 3vh;
 }
 
-#image{
+#image {
   width: 300px;
   height: 300px;
 }
+/* let votes = document.querySelector("#votes");
+console.log(votes);
+let parseIntourValueOfVotes =parseInt( votes.target.value);
+
+let voteCount =document.querySelector("vote-count");
+let totalVoteCount =parseInt(voteCount);
+
+like.innerHTML = `${ ++totalVoteCount}`
+
+function addVote(e){
+  e.preventDefault();
+  fetch("http://localhost:7000/characters", {
+    method:"PATCH",
+    headers: {'Content-Type': "application/json"},
+    body: JSON.stringify({
+      votes:ourValueOfVotes
+  })
+  .then(res=>{
+    res.json()
+  })
+  })
+} */

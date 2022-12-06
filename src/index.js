@@ -24,7 +24,7 @@ function cuteAnimals() {
         ourSpan.setAttribute("id", "animalNames");
         ourSpan.innerHTML = `${cuteName.name}`;
         let newPWithSpan = characterName.appendChild(ourSpan);
-        console.log(ourSpan);
+       // console.log(ourSpan);
         newDiv.appendChild(newPWithSpan);
 
         let ourImage = document.createElement("img");
@@ -32,7 +32,7 @@ function cuteAnimals() {
         ourImage.src = `${cuteName.image}`;
         ourImage.alt = `${cuteName.name}`;
         newDiv.appendChild(ourImage);
-        console.log(ourImage);
+       // console.log(ourImage);
 
         const ps = document.createElement("p");
         ps.setAttribute("id", "hidden");
@@ -95,14 +95,14 @@ function cuteAnimals() {
       let  totalVotes = parseInt(input.value) + parseInt(characterVote.innerText);
         characterVote.innerText = totalVotes;
         let spans = document.querySelector("#animalNames") // we are calling the span we intitialized at the top when creating a new animal
-
-        spans.forEach((ourSpan)=>{
+          console.log(spans)
+        
           let currentNameOfAnimal = document.querySelector("#name").innerText; // the current elements in our HTML FILE hosting the name
-          if(ourSpan.innerText === currentNameOfAnimal){
+          if(spans.innerText === currentNameOfAnimal){
             let parentDiv = ourSpan.closest(".characterBar");
-            parentDiv.querySelector("p#votes").innerText = totalVotes;
+            parentDiv.querySelector("#votes").innerText = totalVotes;
           }
-        })
+        
         form.reset();
       });
           
@@ -115,17 +115,17 @@ function cuteAnimals() {
         
         characterVote.innerText = 0;
 
-        let spans = document.querySelector("p#animalNames span") // we are calling the span we intitialized at the top when creating a new animal
+        let ourSpans = document.querySelector("#animalNames"); // we are calling the span we intitialized at the top when creating a new animal
+        console.log(ourSpans)
         
-        spans.forEach((ourSpan)=>{
         
           let currentNameOfAnimal = document.querySelector("p#name").innerText; // the current elements in our HTML FILE hosting the name
-          if(ourSpan.innerText === currentNameOfAnimal){
+          if(ourSpans.innerText === currentNameOfAnimal){
             let parentDiv = ourSpan.closest(".characterBar");
             parentDiv.querySelector("p#votes").innerText =0;
           }
           
-      })
+      
       
       
       form.reset()

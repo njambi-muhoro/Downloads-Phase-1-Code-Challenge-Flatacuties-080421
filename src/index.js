@@ -94,39 +94,41 @@ function cuteAnimals() {
         e.preventDefault();
       let  totalVotes = parseInt(input.value) + parseInt(characterVote.innerText);
         characterVote.innerText = totalVotes;
-      
-        let spans = document.querySelector("#animalNames ") // we are calling the span we intitialized at the top when creating a new animal
-        
+        let spans = document.querySelector("#animalNames") // we are calling the span we intitialized at the top when creating a new animal
+
         spans.forEach((ourSpan)=>{
-          
           let currentNameOfAnimal = document.querySelector("#name").innerText; // the current elements in our HTML FILE hosting the name
           if(ourSpan.innerText === currentNameOfAnimal){
             let parentDiv = ourSpan.closest(".characterBar");
-            parentDiv.getElementById("hidden").innerText = totalVotes;
-            
+            parentDiv.querySelector("p#votes").innerText = totalVotes;
           }
         })
         form.reset();
       });
+          
+      
+        
+            
       //select the reset button
       resetButton = document.getElementById("reset-btn");
       resetButton.addEventListener('click',()=>{
-        let  totalVotes = parseInt(input.value) + parseInt(characterVote.innerText);
+        
         characterVote.innerText = 0;
 
-        let spans = document.querySelector("#animalNames") // we are calling the span we intitialized at the top when creating a new animal
+        let spans = document.querySelector("p#animalNames span") // we are calling the span we intitialized at the top when creating a new animal
         
         spans.forEach((ourSpan)=>{
-          let currentNameOfAnimal = document.querySelector("#name").innerText; // the current elements in our HTML FILE hosting the name
+        
+          let currentNameOfAnimal = document.querySelector("p#name").innerText; // the current elements in our HTML FILE hosting the name
           if(ourSpan.innerText === currentNameOfAnimal){
             let parentDiv = ourSpan.closest(".characterBar");
-            parentDiv.getElementById("hidden").innerText =0;
+            parentDiv.querySelector("p#votes").innerText =0;
           }
-          form.reset()
+          
       })
       
       
-      
+      form.reset()
 
 
     });
